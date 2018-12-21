@@ -15,7 +15,7 @@ new Query({
   b: '2'
 })
 ```
-mappingTable参见[mapping](#mapping-table-dictionary)
+mappingTable参见[mapping](#mapping-table-dictionarystring)
 
 ## API
 ### toString (): string
