@@ -1,0 +1,33 @@
+{
+  "name": "wow-query",
+  "version": "1.0.0",
+  "description": "基于 URLSearchParams 的查询参数处理类",
+  "keywords": [
+    "query",
+    "querystring",
+    "param",
+    "parameter",
+    "searchparams",
+    "URLSearchParams"
+  ],
+  "main": "dist/index.js",
+  "typings": "types/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aweiu/wow-query.git"
+  },
+  "author": "aweiu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aweiu/wow-query/issues"
+  },
+  "homepage": "https://github.com/aweiu/wow-query#readme",
+  "devDependencies": {
+    "tslint": "^5.12.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.2.2"
+  }
+}
