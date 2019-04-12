@@ -1,4 +1,5 @@
 import { camelCaseToKebabCase, kebabCaseToCamelCase, someOf } from './utils';
+const ignoreValues = [undefined, ''];
 export default class Query {
     constructor(query, mappingTable) {
         this.uRLSearchParams = new URLSearchParams();
@@ -14,7 +15,7 @@ export default class Query {
                 if (Array.isArray(value))
                     for (let val of value)
                         this.uRLSearchParams.append(name, val);
-                else if (value !== '')
+                else if (!ignoreValues.includes(value))
                     this.uRLSearchParams.append(name, value);
             }
         }
