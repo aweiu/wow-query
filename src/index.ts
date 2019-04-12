@@ -1,11 +1,11 @@
 import { Dictionary, QueryData, QueryValue } from './types'
 import { camelCaseToKebabCase, kebabCaseToCamelCase, someOf } from './utils'
 
+const ignoreValues = [undefined, '']
 export default class Query {
   private uRLSearchParams: URLSearchParams = new URLSearchParams()
 
   constructor (query: QueryData | string, mappingTable?: Dictionary<string>) {
-
     if (typeof query === 'string') {
       this.uRLSearchParams = new URLSearchParams(query)
       if (mappingTable) this.mapping(mappingTable)
@@ -14,7 +14,7 @@ export default class Query {
         const name = mappingTable ? (mappingTable[key] || key) : key
         const value = query[key]
         if (Array.isArray(value)) for (let val of value) this.uRLSearchParams.append(name, val)
-        else if (value !== '') this.uRLSearchParams.append(name, value)
+        else if (!ignoreValues.includes(value)) this.uRLSearchParams.append(name, value)
       }
     }
   }
