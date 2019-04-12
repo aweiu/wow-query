@@ -1,6 +1,6 @@
 {
   "name": "wow-query",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "基于 URLSearchParams 的查询参数处理类",
   "keywords": [
     "query",
